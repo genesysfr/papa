@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joyeux Anniversaire | Le Chevalier Orange</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="téléchargé.jpg">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">CHEVALIER<span>ORANGE</span>.Vip</div>
+        <div class="date-today" id="currentDate"></div>
+    </nav>
+
+    <header class="hero">
+        <div class="badge-bday">🎉 ÉDITION LIMITÉE ANNIVERSAIRE</div>
+        <h1>Joyeux Anniversaire, <br><span class="highlight">Papa.</span></h1>
+        <p class="tagline">L'homme qui écrit plus vite que son ombre (quand il a le temps).</p>
+        
+        <div class="stats-container">
+            <div class="stat-item">
+                <span class="stat-number">1</span>
+                <span class="stat-label">Héros Orange</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">∞</span>
+                <span class="stat-label">Histoires</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">Meilleur</span>
+                <span class="stat-label">Papa du monde</span>
+            </div>
+        </div>
+
+        <button class="cta-button" onclick="celebrate()">t'sais t'es pas obligée de cliquer</button>
+    </header>
+
+    <section class="story-section">
+        <div class="card">
+            <h2>Ca c'est du Daron</h2>
+            <p>Aujourd'hui, nous ne fêtons pas seulement un anniversaire, mais le génie créatif derrière <strong>Le Chevalier Orange</strong>.</p>
+            <p>Expert en dragons, maître des fins heureuses, et détenteur du record mondial du plus grand nombre de cafés bus par jour. boua a a le gros caca</p>
+        </div>
+
+        <div class="gallery-container">
+            <h2>Galerie des Exploits</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="this.classList.toggle('revealed')">
+                    <img src="/IMG_3247.PNG" alt="Souvenir">
+                </div>
+                <div class="gallery-item" onclick="this.classList.toggle('revealed')">
+                    <img src="/Gemini_Generated_Image_jpkqv0jpkqv0jpkq.png" alt="Souvenir">
+                </div>
+                <div class="gallery-item" onclick="this.classList.toggle('revealed')">
+                    <img src="/IMG_2135.png" alt="Souvenir">
+                </div>
+                <div class="gallery-item" onclick="this.classList.toggle('revealed')">
+                    <img src="/IMG_3248.PNG" alt="Souvenir">
+                </div>
+                <div class="gallery-item" onclick="this.classList.toggle('revealed')">
+                    <img src="/c40ec50a-8aab-4d5a-b734-2751695470df.jpg" alt="Souvenir">
+                </div>
+                <div class="gallery-item" onclick="this.classList.toggle('revealed')">
+                    <img src="/flowers for you.jpg" alt="Souvenir">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Joyeux anniversaire !</p>
+        <p class="copyright">© 2025 - Burlot</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script>
+        // Affiche la date du jour
+        const d = new Date();
+        const options = { day: 'numeric', month: 'long', year: 'numeric' };
+        document.getElementById('currentDate').innerText = d.toLocaleDateString('fr-FR', options);
+
+        // Fonction pour lancer les confettis
+        function celebrate() {
+            var duration = 3 * 1000;
+            var end = Date.now() + duration;
+
+            (function frame() {
+                confetti({ 
+                    particleCount: 5, 
+                    angle: 60, 
+                    spread: 55, 
+                    origin: { x: 0 }, 
+                    colors: ['#FF6B00', '#000000', '#FFF0E5'] 
+                });
+                confetti({ 
+                    particleCount: 5, 
+                    angle: 120, 
+                    spread: 55, 
+                    origin: { x: 1 }, 
+                    colors: ['#FF6B00', '#000000', '#FFF0E5'] 
+                });
+
+                if (Date.now() < end) {
+                    requestAnimationFrame(frame);
+                }
+            }());
+        }
+    </script>
+</body>
+</html>
